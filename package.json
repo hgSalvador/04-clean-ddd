@@ -4,7 +4,8 @@
   "description": "Design dirigido a dominio     Design tem haver como vamos desenhar nossa aplicacao.      Design eh como vamos converter o problema do nosso cliente em algo palpavel, um software.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "keywords": [],
   "author": "",
