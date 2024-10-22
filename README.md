@@ -8,7 +8,8 @@ Design dirigido a dominio
 ## Dominio
 Dominio seria como uma area de entendimento, uma area onde todas as pessoas envolvidas na construcao do software, tem os conhecimentos muito semelhantes.
 
-- Domain Experts 
+- Domain Experts
+    - Pessoas que dominam a regra do software
     - Conversa
 - Linguagem Ubiqua
     Uma linguagem universal em que todas as pessoas envolvidas com a construcao do software, conseguem conversar por igual. Muita das vezes nos como programadores
