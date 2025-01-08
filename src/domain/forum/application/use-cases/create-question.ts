@@ -40,10 +40,13 @@ export class CreateQuestionUseCase {
       })
     })
 
+    question.attachments = questionAttachments
+    
     await this.questionRepository.create(question)
 
     return right({
       question,
     })
+
   }
 }
