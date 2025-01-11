@@ -14,8 +14,9 @@ let sut: EditAnswerUseCase
 
 describe('Edit Answer', () => {
   beforeEach(() => {
-    inMemoryAnswersRepository = new InMemoryAnswersRepository()
     inMemoryAnswerAttachmentsRepository = new InMemoryAnswerAttachmentsRepository()
+    inMemoryAnswersRepository = new InMemoryAnswersRepository(inMemoryAnswerAttachmentsRepository)
+
     sut = new EditAnswerUseCase(
       inMemoryAnswersRepository,
       inMemoryAnswerAttachmentsRepository
@@ -41,12 +42,16 @@ describe('Edit Answer', () => {
       })
     )
 
+
     await sut.execute({
         answerId: newAnswer.id.toString(),
         authorId: 'author-1',
         content:'Conteudo teste',
         attachmentsIds: ['1', '3']
     })
+
+    console.log(inMemoryAnswerAttachmentsRepository.items[1])
+
 
     expect(inMemoryAnswersRepository.items[0]).toMatchObject({
         content: 'Conteudo teste'

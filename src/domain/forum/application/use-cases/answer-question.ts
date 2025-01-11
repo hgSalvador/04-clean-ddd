@@ -42,7 +42,6 @@ export class AnswerQuestionUseCase {
       })
     })
 
-    console.log(answerAttachment)
     
     answer.attachments = new AnswerAttachmentList(answerAttachment)
 
