@@ -50,8 +50,6 @@ describe('Edit Answer', () => {
         attachmentsIds: ['1', '3']
     })
 
-    console.log(inMemoryAnswerAttachmentsRepository.items[1])
-
 
     expect(inMemoryAnswersRepository.items[0]).toMatchObject({
         content: 'Conteudo teste'
