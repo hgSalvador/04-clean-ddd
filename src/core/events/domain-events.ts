@@ -4,7 +4,10 @@ import { DomainEvent } from './domain-event'
 
 type DomainEventCallback = (event: any) => void
 export class DomainEvents {
+  //Subscribers
   private static handlersMap: Record<string, DomainEventCallback[]> = {}
+
+  //Marca os agregados que tem eventos pendentes, para serem enviados aos agregados
   private static markedAggregates: AggregateRoot<any>[] = []
   
 
@@ -15,6 +18,7 @@ export class DomainEvents {
     }
   }
 
+  //Metodo que vai disparar os eventos que estao prontos
   private static dispatchAggregateEvents(aggregate: AggregateRoot<any>) {
     aggregate.domainEvents.forEach((event: DomainEvent) => this.dispatch(event))
   }
